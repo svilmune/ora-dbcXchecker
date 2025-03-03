@@ -40,13 +40,13 @@ The script supports querying Exadata Infrastructure with **specific Exadata Infr
 #### **Example 1: Fetch Exadata Infra by OCID**
 
 ```sh
-./exadata_discovery.sh --dbtype=exadata --ocid=<infra_ocid>
+./ora-dbxchecker.sh --dbtype=exadata --ocid=<infra_ocid>
 ```
 
 #### **Example 2: Skip DB Homes & Databases**
 
 ```sh
-./exadata_discovery.sh --dbtype=exadata --ocid=<infra_ocid> --nodbinfo
+./ora-dbxchecker.sh --dbtype=exadata --ocid=<infra_ocid> --nodbinfo
 ```
 
 ## ⚙️ **Parameters**
@@ -61,32 +61,58 @@ The script supports querying Exadata Infrastructure with **specific Exadata Infr
 
 ```
 ============================================================================================
-Exadata Cloud Deployment Report - 29-Feb-2024
+Exadata Cloud Deployment Report - Sat  1 Mar 2025 08:15:27 EST
 ============================================================================================
 
-Exadata Infrastructure: MyExaInfra1 | Shape: Exadata.X9M | Created: 15-Feb-2025
-Compute: 2 Nodes | 96 OCPUs
-Storage: 3 Nodes | Storage Size: 200 TB
+Exadata Cloud Infrastructure: Exadata-Infra | Shape: Exadata.X9M | Created: 22-Jul-2024
+Compute: 2 Nodes | 252 OCPUs
+Storage: 3 Nodes | Storage Size: 192.0 TB | Storage Server Version: 24.1.8.0.0.250208
+Customer Contacts: simo@thatfinnishguy
 
 ============================================================================================
-  Cloud VM Cluster: VMCluster1 | Version: 19c | State: AVAILABLE
+  Cloud VM Cluster: ExaCS1 Version: 22.1.30.0.0.241204 Cluster State: AVAILABLE
 ============================================================================================
-  OCPUs: 32 | Memory: 1024 GB
-  License: LICENSE_INCLUDED
-  Created: 20-Jan-2024
+  OCPUs: 10 | Memory: 1000 GB
+  License: BRING_YOUR_OWN_LICENSE | DATA DISKGROUP PCT: 80%
+  SCAN DNS: exacl1.subnet.vcn.oraclevcn.com
+  SCAN IPs: 10.1.1.3, 10.1.1.4, 10.1.1.5
+  SCAN LISTENER PORT: 1521 TCPS: 2484
+  Network Security Groups: N/A
+  Cluster Name: exacl1
+  Cluster Storage Size: 55.0 TB
+  Client Subnet: subnet CIDR: 10.1.1.0/24
+  Backup Subnet: backup-subnet CIDR: 10.1.2.0/24
+  GI VERSION: 19.24.0.0.0
+  Created: 23-Jul-2024
   -------------------------------------------------------------------------------------------
-    DB Home: PRODDBHome (Version: 19.17.0.0)
+      DB Node Details:
   -------------------------------------------------------------------------------------------
-      Database: PRODDB1
-      Database: PRODDB2
+       exal1 (IP1: 10.1.1.45, IP2: 10.1.1.55) | exal2 (IP1: 10.1.1.56, IP2: 10.1.1.53)
   -------------------------------------------------------------------------------------------
+  DATABASE DETAILS
+  -------------------------------------------------------------------------------------------
+    DB Home: TFG_DBHome_19c (Version: 19.24.0.0.0)
+  -------------------------------------------------------------------------------------------
+      Database: TFG1 Status: AVAILABLE
+      Backups: Enabled: N/A | Full Backup: SUNDAY
+
+      Connection Strings:
+        cdbDefault: <CONNECTION STRING>
+        cdbIpDefault: <CONNECTION STRING>
+
+      PDB: PRDOID01
+      PDB STATE: AVAILABLE | PDB OPEN MODE: READ_ONLY
+
+      PDB Connection Strings:
+          pdbDefault: <CONNECTION STRING>
+          pdbIpDefault: <CONNECTION STRING>
 ```
 
 ## ⚠️ **Notes**
 
-- 🛑 The script **only supports** **Exadata Cloud\@Customer and Exadata Cloud Service** models.
+- 🛑 The script **only supports**  Exadata Cloud Service** model right now.
 - ❌ If you encounter errors, verify your **IAM permissions** and **OCI CLI authentication settings**.
-- 🛠️ For troubleshooting, enable **debug mode** in OCI CLI:
+- 🛠️ For troubleshooting, enable **debug mode** in OCI CLI (not yet working):
   ```sh
   oci --debug db cloud-exa-infra get --cloud-exa-infra-id <infra_ocid>
   ```
@@ -97,5 +123,5 @@ This project is licensed under the **MIT License**.
 
 ---
 
-🚀 **Start using the script now to discover your Exadata infrastructure!**
+🚀 **Report any bugs!**
 
