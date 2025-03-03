@@ -9,7 +9,7 @@ This script provides detailed information about **Exadata Infrastructure, VM Clu
 - 🏗️ **Fetches Exadata Infrastructure** details, including compute and storage configurations.
 - 💻 **Retrieves VM Clusters, DB Homes, and Databases**.
 - 🖥️ **Lists DB Nodes and associated network details**.
-- 🚀 **Supports filtering with ****\`\`**** to exclude DB Homes and Databases**.
+- 🚀 **Supports filtering with ****\`--nodbinfo\`**** to exclude DB Homes and Databases**.
 - ☁️ **Works with both OCI CLI and OCI Cloud Shell**.
 
 ## 🔑 **Prerequisites**
@@ -23,16 +23,17 @@ To run this script, you need:
 
 ### **2️⃣ Required IAM Permissions**
 
-- \`\` access to query **Exadata resources**.
-- \`\` access to fetch **networking details**.
+- \`\` read access to query **Exadata resources** including Infrastructure, VM Clusters and Databases.
+- \`\` read access to fetch **OCI networking details**.
 
 ### **3️⃣ OCI Cloud Shell (Optional)**
 
 - You can run this script directly from [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshell.htm) **without installing anything locally**.
+- This requires OCI Cloud Shell policies to your user group in OCI.
 
 ## 🚀 **Usage**
 
-The script supports querying Exadata Infrastructure either **by Compartment OCID** or **specific Exadata Infra OCID**.
+The script supports querying Exadata Infrastructure with **specific Exadata Infra OCID**.
 
 ### **🛠️ Running the Script**
 
