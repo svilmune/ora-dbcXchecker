@@ -12,7 +12,7 @@ This script provides detailed information about **Exadata Infrastructure, VM Clu
 - 🚀 **Supports filtering with ****\`--nodbinfo\`**** to exclude DB Homes and Databases**.
 - ☁️ **Works with both OCI CLI and OCI Cloud Shell**.
 
-## 🔑 **Prerequisites**
+## 🔹 **Prerequisites**
 
 To run this script, you need:
 
@@ -31,11 +31,11 @@ To run this script, you need:
 - You can run this script directly from [OCI Cloud Shell](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cloudshell.htm) **without installing anything locally**.
 - This requires OCI Cloud Shell policies to your user group in OCI.
 
-## 🚀 **Usage**
+## 🔹 **Usage**
 
 The script supports querying Exadata Infrastructure with **specific Exadata Infra OCID**.
 
-### **🛠️ Running the Script**
+### **🔹 Running the Script**
 
 #### **Example 1: Fetch Exadata Infra by OCID**
 
@@ -49,7 +49,7 @@ The script supports querying Exadata Infrastructure with **specific Exadata Infr
 ./ora-dbxchecker.sh --dbtype=exadata --ocid=<infra_ocid> --nodbinfo
 ```
 
-## ⚙️ **Parameters**
+## 🔹 **Parameters**
 
 | **Parameter** | **Description**                                     |
 | ------------- | --------------------------------------------------- |
@@ -57,7 +57,7 @@ The script supports querying Exadata Infrastructure with **specific Exadata Infr
 | `--ocid`      | **Exadata Infrastructure OCID** to query.           |
 | `--nodbinfo`  | **Optional** flag to **skip DB Homes & Databases**. |
 
-## 📊 **Example Output**
+## 🔹 **Example Output**
 
 ```
 ============================================================================================
@@ -108,7 +108,7 @@ Customer Contacts: simo@thatfinnishguy
           pdbIpDefault: <CONNECTION STRING>
 ```
 
-## ⚠️ **Notes**
+## 🔹 **Notes**
 
 - 🛑 The script **only supports**  Exadata Cloud Service** model right now.
 - ❌ If you encounter errors, verify your **IAM permissions** and **OCI CLI authentication settings**.
@@ -117,11 +117,11 @@ Customer Contacts: simo@thatfinnishguy
   oci --debug db cloud-exa-infra get --cloud-exa-infra-id <infra_ocid>
   ```
 
-## 📜 **License**
+## 🔹 **License**
 
 This project is licensed under the **MIT License**.
 
 ---
 
-🚀 **Report any bugs!**
+🔹 **Report any bugs!**
 
